@@ -18,6 +18,13 @@ def get_city_by(city_id):
 def get_all_cities():
     return WEATHER_DB
 
-def post_city(new_city):
- 
+def post_city(new_city): 
      WEATHER_DB[new_city['id']] = new_city
+
+def patch_city(update_city): 
+    print ('***update en weather')
+    WEATHER_DB[update_city['id']] = update_city
+
+def del_city(city_id): 
+    print ('***del en weather')
+    return WEATHER_DB.pop(city_id)

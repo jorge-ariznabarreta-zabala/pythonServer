@@ -1,8 +1,8 @@
 from flask import Flask, request
 from .weather import *
 
-
 app = Flask(__name__)
+print("********APP************", app.__doc__)
 
 @app.route("/") #Si me pides /
 def hello_root():
@@ -31,5 +31,5 @@ def update_city(city_id):
     return ""
 
 @app.route("/cities/<city_id>", methods=['DELETE'])#Si me pides /cities/ALGO con DELETE
-def delete_(city_id):
+def delete_city(city_id):
     return del_city(city_id)

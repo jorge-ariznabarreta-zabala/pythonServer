@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "e50e52b6-3429-40aa-abfb-1e457ce392f1",
+		"name": "API Jercilla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26396001"
+	},
+	"item": [
+		{
+			"name": "GET cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_cities}}",
+					"host": [
+						"{{local_cities}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cities{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_cities}}/BUC",
+					"host": [
+						"{{local_cities}}"
+					],
+					"path": [
+						"BUC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"BUC\", \"name\":\"Bucharest\", \"temperature\": 12, \"rain_probability\": 0.87}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_cities}}",
+					"host": [
+						"{{local_cities}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "NYC",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Nueva York",
+							"disabled": true
+						},
+						{
+							"key": "temperature",
+							"value": "8",
+							"disabled": true
+						},
+						{
+							"key": "rain_probability",
+							"value": "0.4",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "{\"id\":\"NYC\", \"name\":\"New York\", \"temperature\": 8, \"rain_probability\": 0.4}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"temperature\": 20, \"rain_probability\": 0.14}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_cities}}/MNG",
+					"host": [
+						"{{local_cities}}"
+					],
+					"path": [
+						"MNG"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "NYC",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Nueva York",
+							"disabled": true
+						},
+						{
+							"key": "temperature",
+							"value": "8",
+							"disabled": true
+						},
+						{
+							"key": "rain_probability",
+							"value": "0.4",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "{\"id\":\"NYC\", \"name\":\"New York\", \"temperature\": 8, \"rain_probability\": 0.4}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local_cities}}/BUC",
+					"host": [
+						"{{local_cities}}"
+					],
+					"path": [
+						"BUC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT (update)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"BUC\", \"name\":\"Managua\", \"temperature\": 32, \"rain_probability\": 0.87}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_cities}}/BUC",
+					"host": [
+						"{{local_cities}}"
+					],
+					"path": [
+						"BUC"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://deploy-back-render.onrender.com/"
+		},
+		{
+			"key": "local_cities",
+			"value": "http://localhost:5000/cities"
+		}
+	]
+}

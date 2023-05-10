@@ -13,7 +13,7 @@ WEATHER_DB={
     },
 }
 def get_city_by(city_id):
-    return WEATHER_DB.get(city_id)
+    return WEATHER_DB.get(city_id) #WEATHER_DB[city_id]
 
 def get_all_cities():
     return WEATHER_DB

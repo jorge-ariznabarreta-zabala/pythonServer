@@ -1,8 +1,10 @@
 from flask import Flask, request
+from flask_cors import CORS
 from .weather import *
 
 app = Flask(__name__)
-print("********APP************", app.__doc__)
+cors = CORS(app)
+#print("********APP************", app.__doc__)
 
 @app.route("/") #Si me pides /
 def hello_root():
@@ -19,17 +21,19 @@ def get_city(city_id):
 @app.route("/cities", methods=["POST"]) #Si me pides /cities con POST
 def new_city():
     data= request.get_json()
-    print ('**newcity', data['id'])
+    print ('**newcity', data)
     post_city(data)
     return ""
 
 @app.route("/cities/<city_id>", methods=["PUT"])#Si me pides /cities/ALGO con PUT
-def update_city(city_id):
+def update_citi(city_id):
     data= request.get_json()
     print ('**update_city', data['id'])
-    patch_city(data)
+    update_city(data)
     return ""
 
 @app.route("/cities/<city_id>", methods=['DELETE'])#Si me pides /cities/ALGO con DELETE
 def delete_city(city_id):
-    return del_city(city_id)
+ 
+    del_city(city_id)
+    return ""

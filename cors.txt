@@ -1,0 +1,36 @@
+Para habilitar CORS en una aplicación Flask, puedes utilizar la extensión Flask-CORS. Aquí tienes los pasos para instalar y configurar Flask-CORS en tu aplicación:
+
+1. Instala Flask-CORS utilizando pip:
+   
+   ```
+   pip install flask-cors
+   ```
+
+2. Importa la extensión `CORS` en tu aplicación Flask:
+
+   ```python
+   from flask import Flask
+   from flask_cors import CORS
+   ```
+
+3. Crea una instancia de tu aplicación Flask:
+
+   ```python
+   app = Flask(__name__)
+   ```
+
+4. Configura Flask-CORS para habilitar CORS en tu aplicación:
+
+   ```python
+   cors = CORS(app)
+   ```
+
+   Esto habilitará CORS en todos los endpoints de tu aplicación Flask con la configuración predeterminada. Si deseas personalizar las opciones de CORS, puedes hacerlo pasando parámetros adicionales a la instancia de `CORS`. Por ejemplo:
+
+   ```python
+   cors = CORS(app, resources={r"/api/*": {"origins": "http://example.com"}})
+   ```
+
+   Aquí se configura CORS para permitir solo solicitudes desde `http://example.com` en cualquier endpoint que comience con `/api/`.
+
+Con estos pasos, tendrás CORS habilitado en tu aplicación Flask. Esto permitirá que las solicitudes AJAX desde dominios diferentes accedan a tu API. Asegúrate de entender y ajustar la configuración de CORS según tus necesidades de seguridad y acceso.
